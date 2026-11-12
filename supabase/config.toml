@@ -1,0 +1,20 @@
+# Settings for the Supabase CLI (local development). Hosted projects are configured in the dashboard; see README.
+project_id = "mybooks"
+
+[auth]
+enable_signup = false
+site_url = "http://localhost:3000"
+additional_redirect_urls = ["http://localhost:3000/auth/confirm"]
+minimum_password_length = 12
+
+[auth.mfa.totp]
+enroll_enabled = true
+verify_enabled = true
+
+[auth.email.template.invite]
+subject = "You have been invited to MyBooks"
+content_path = "./supabase/templates/invite.html"
+
+[auth.email.template.recovery]
+subject = "Reset your MyBooks password"
+content_path = "./supabase/templates/recovery.html"
